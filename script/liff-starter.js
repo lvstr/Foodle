@@ -153,17 +153,24 @@ function registerButtonHandlers() {
       } else {
         let cartArray = foodleCart.listCart();
         for (let i in cartArray) {
-          liff.sendMessages([
-            {
-              type: "text",
-              text: `Hai, ini hasil Order saya:
-              
+          liff
+            .sendMessages([
+              {
+                type: "text",
+                text: `Hai, ini hasil Order saya:
+
           - ${cartArray[i].name}: ${cartArray[i].count}x
   
           Total Harga: Rp. ${cartArray[i].total}
           `,
-            },
-          ]);
+              },
+            ])
+            .then(() => {
+              window.alert("Orderan Kamu segera diProses ya :)");
+            })
+            .catch((error) => {
+              window.alert("Error sending message: " + error);
+            });
         }
       }
     });
