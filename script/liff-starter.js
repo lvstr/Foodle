@@ -77,8 +77,11 @@ function initializeApp() {
     document.getElementById("liffAppContent").classList.remove("d-none");
     document.getElementById("liffInitErrorMessage").classList.add("d-none");
     liff.getProfile().then((profile) => {
-      document.querySelectorAll(
-          "#lineName"
+     document.getElementById(
+          "lineName"
+        ).innerHTML = `${profile.displayName}`;
+        document.getElementById(
+          "lineName2"
         ).innerHTML = `${profile.displayName}`;
       document.getElementById(
         "linePhoto"
