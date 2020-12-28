@@ -76,6 +76,12 @@ function initializeApp() {
     document.getElementById("liffLoginButton").classList.add("d-none");
     document.getElementById("liffAppContent").classList.remove("d-none");
     document.getElementById("liffInitErrorMessage").classList.add("d-none");
+    liff.getProfile().then((profile) => {
+      document.getElementById("lineName").innerHTML = `${profile.displayName}`;
+      document.getElementById(
+        "liffPhoto"
+      ).innerHTML = `<img class="rounded-circle" src="${profile.pictureUrl}" alt="User Photo Profile" width="20%"/>`;
+    });
   } else {
     document.getElementById("liffLogoutButton").classList.add("d-none");
     document.getElementById("liffAppContent").classList.add("d-none");
