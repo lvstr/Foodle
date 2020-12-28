@@ -77,10 +77,9 @@ function initializeApp() {
     document.getElementById("liffAppContent").classList.remove("d-none");
     document.getElementById("liffInitErrorMessage").classList.add("d-none");
     liff.getProfile().then((profile) => {
-      let displayName = document.querySelectorAll("#lineName")
-        displayName.foreach((name) => {
-          name.innerHTML = `${profile.displayName}`;
-        })
+      document.querySelectorAll(
+          "#lineName"
+        ).innerHTML = `${profile.displayName}`;
       document.getElementById(
         "linePhoto"
       ).innerHTML += `<img class="rounded-circle" src="${profile.pictureUrl}" alt="User Photo Profile" width="20%"/>`;
