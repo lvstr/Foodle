@@ -145,26 +145,28 @@ function registerButtonHandlers() {
       }
     });
 
-  document
+   document
     .getElementById("sendMessageButton")
     .addEventListener("click", function () {
-     if (!liff.isInClient()) {
-      sendAlertIfNotInClient();
-    } else {
-      let cartArray = foodleCart.listCart();
-      for (let i in cartArray) {
-        liff.sendMessages([
-          {
-            type: "text",
-            text: `Hai, ini hasil Order saya:
-        - ${cartArray[i].name}: ${cartArray[i].count}x
-
-        Total Harga: Rp. ${cartArray[i].total}
-        `,
-          },
-        ]);
+      if (!liff.isInClient()) {
+        sendAlertIfNotInClient();
+      } else {
+        let cartArray = foodleCart.listCart();
+        for (let i in cartArray) {
+          liff.sendMessages([
+            {
+              type: "text",
+              text: `Hai, ini hasil Order saya:
+              
+          - ${cartArray[i].name}: ${cartArray[i].count}x
+  
+          Total Harga: Rp. ${cartArray[i].total}
+          `,
+            },
+          ]);
+        }
       }
-    }
+    });
 }
 
 function sendAlertIfNotInClient() {
