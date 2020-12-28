@@ -164,27 +164,26 @@ function registerButtonHandlers() {
         sendAlertIfNotInClient();
       } else {
         let cartArray = foodleCart.listCart();
-       let output = ""
+        let output = "";
         for (let i in cartArray) {
           output += `Hai, ini hasil Order saya: 
           - ${cartArray[i].name}: ${cartArray[i].count}x 
-          Total Harga: Rp. ${cartArray[i].total}`
+          Total Harga: Rp. ${cartArray[i].total}`;
         }
-       
-          liff
-            .sendMessages([
-              {
-                type: "text",
-                text: output,
-              },
-            ])
-            .then(() => {
-              window.alert("Orderan Kamu segera diProses ya :)");
-            })
-            .catch((error) => {
-              window.alert("Error sending message: " + error);
-            });
-        }
+
+        liff
+          .sendMessages([
+            {
+              type: "text",
+              text: output,
+            },
+          ])
+          .then(() => {
+            window.alert("Orderan Kamu segera diProses ya :)");
+          })
+          .catch((error) => {
+            window.alert("Error sending message: " + error);
+          });
       }
     });
 }
