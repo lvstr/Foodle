@@ -81,6 +81,7 @@ function initializeApp() {
       document.getElementById(
         "liffPhoto"
       ).innerHTML = `<img class="rounded-circle" src="${profile.pictureUrl}" alt="User Photo Profile" width="20%"/>`;
+      console.log(profile);
     });
   } else {
     document.getElementById("liffLogoutButton").classList.add("d-none");
