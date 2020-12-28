@@ -1,0 +1,98 @@
+body {
+  background-color: #dfdfdf;
+}
+
+nav {
+  box-shadow: black;
+}
+
+.white-bar-info {
+  padding: 2px;
+  padding-top: 15px;
+  padding-left: 30px;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.user-info {
+  height: 100%;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.user-info img {
+  align-content: center;
+}
+
+.user-info h4 {
+  padding-top: 30px;
+}
+
+.bg-img {
+  background-color: grey;
+  border-radius: 70px;
+}
+
+.dark-divider {
+  border-top: 2px solid black;
+}
+
+.welcome-message {
+  height: 72%;
+  margin-top: 10px;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.welcome-message h4 {
+  padding-top: 20px;
+}
+
+.welcome-message p {
+  padding-bottom: 10px;
+}
+
+.carousel-inner > .carousel-item > img {
+  width: 100%;
+  height: 20%;
+}
+
+.food-title {
+  margin-top: 80px;
+}
+
+.fab-cart {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+.fab-delete-cart {
+  position: fixed;
+  padding-left: 35px;
+  right: 20px;
+  bottom: 70px;
+  z-index: 999;
+}
+
+.fab-delete-cart svg {
+  position: relative;
+  right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome-message {
+    height: 72%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .user-info {
+    height: 100%;
+  }
+
+  .white-bar-info {
+    margin-top: 50px;
+  }
+}
