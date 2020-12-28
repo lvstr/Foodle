@@ -216,9 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Item berkurang 1
   eventHandler("#show-cart", "click", "#minus-item", () => {
-    let dataName = document.getElementById("minus-item");
-    let name = dataName.dataset.name;
-    foodleCart.removeItemFromCart(name);
+    let dataName = document.querySelectorAll("#minus-item");
+    dataName.forEach((names) => {
+      let name = names.dataset.name;
+      foodleCart.removeItemFromCart(name);
+    })
     displayCart();
   });
   // Item bertambah 1
