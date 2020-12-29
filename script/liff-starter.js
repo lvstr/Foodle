@@ -125,7 +125,7 @@ function registerButtonHandlers() {
     .getElementById("openWindowButton")
     .addEventListener("click", function () {
       liff.openWindow({
-        url: "https://example.herokuapp.com/", // Isi dengan Endpoint URL aplikasi web Anda
+        url: "https://foodle-angkringan.herokuapp.com/", // Isi dengan Endpoint URL aplikasi web Anda
         external: true,
       });
     });
