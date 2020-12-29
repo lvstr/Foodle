@@ -170,7 +170,7 @@ function registerButtonHandlers() {
           hasil += `
 - ${cartArray[i].name}: ${cartArray[i].count}x `;
         }
-        let output2 = `Total Harga: ${foodleCart.totalCount()}`;
+        let output2 = `Total Harga: Rp. ${foodleCart.totalCart()}`;
 
         liff
           .sendMessages([
