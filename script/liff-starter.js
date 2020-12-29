@@ -164,18 +164,22 @@ function registerButtonHandlers() {
         sendAlertIfNotInClient();
       } else {
         let cartArray = foodleCart.listCart();
-        let output = "";
+         let output1 = `Hai, ini hasil Order saya:`;
+        let hasil = "";
         for (let i in cartArray) {
-          output += `Hai, ini hasil Order saya: 
-          - ${cartArray[i].name}: ${cartArray[i].count}x 
-          Total Harga: Rp. ${cartArray[i].total}`;
+          hasil += `- ${cartArray[i].name}: ${cartArray[i].count}x `;
         }
+        let output2 = `Total Harga: ${foodleCart.totalCount}`;
 
         liff
           .sendMessages([
             {
               type: "text",
-              text: output,
+              text: `${output1}
+
+${hasil}
+
+${output2}`,
             },
           ])
           .then(() => {
