@@ -207,58 +207,31 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Tombol hapus item
-  eventHandler("#show-cart", "click", "#delete-item", () => {
-    let dataName = document.getElementById("delete-item");
-    let name = dataName.dataset.name;
-    foodleCart.removeItemFromCartAll(name);
-    displayCart();
-  });
+$('#show-cart').on("click", "#delete-item", function(event) {
+  let name = $(this).data('name')
+  foodleCart.removeItemFromCartAll(name);
+  displayCart();
+})
+// Tombol kurang Item
+$('#show-cart').on("click", "#minus-item", function(event) {
+  let name = $(this).data('name')
+  foodleCart.removeItemFromCart(name);
+  displayCart();
+})
+// Tombol tambah Item
+$('#show-cart').on("click", "#plus-item", function(event) {
+  let name = $(this).data('name')
+  foodleCart.addItemToCart(name);
+  displayCart();
+})
 
-  // Item berkurang 1
-  eventHandler("#show-cart", "click", "#minus-item", () => {
-    let dataName = document.querySelectorAll("#minus-item");
-    dataName.forEach((names) => {
-      let name = names.dataset.name;
-      foodleCart.removeItemFromCart(name);
-    })
-    displayCart();
-  });
-  // Item bertambah 1
-  eventHandler("#show-cart", "click", "#plus-item", () => {
-    let dataName = document.getElementById("plus-item");
-    let name = dataName.dataset.name;
-    foodleCart.addItemToCart(name);
-    displayCart();
-  });
-
-  // Input hitungan Item
-  eventHandler("#show-cart", "change", "#item-count", () => {
-    let dataName = document.getElementById("item-count");
-    let name = dataName.dataset.name;
-    let count = Number(dataName.value());
-    foodleCart.setCountForItem(name, count);
-    displayCart();
-  });
-
-  let orderData = () => {
-    if (!liff.isInClient()) {
-      sendAlertIfNotInClient();
-    } else {
-      let cartArray = foodleCart.listCart();
-      for (let i in cartArray) {
-        liff.sendMessages([
-          {
-            type: "text",
-            text: `Hai, ini hasil Order saya:
-        - ${cartArray[i].name}: ${cartArray[i].count}x
-
-        Total Harga: Rp. ${cartArray[i].total}
-        `,
-          },
-        ]);
-      }
-    }
-  };
+// Input jumlah Item
+$('#show-cart').on("change", "#item-count", function(event) {
+   let name = $(this).data('name');
+   let count = Number($(this).val());
+  foodleCart.setCountForItem(name, count);
+  displayCart();
+});
 
   displayCart();
 });
