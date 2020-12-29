@@ -167,9 +167,10 @@ function registerButtonHandlers() {
          let output1 = `Hai, ini hasil Order saya:`;
         let hasil = "";
         for (let i in cartArray) {
-          hasil += `- ${cartArray[i].name}: ${cartArray[i].count}x `;
+          hasil += `
+- ${cartArray[i].name}: ${cartArray[i].count}x `;
         }
-        let output2 = `Total Harga: ${foodleCart.totalCount}`;
+        let output2 = `Total Harga: ${foodleCart.totalCount()}`;
 
         liff
           .sendMessages([
